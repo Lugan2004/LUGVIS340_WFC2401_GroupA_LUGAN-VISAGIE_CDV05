@@ -233,9 +233,6 @@ nav{
   border-bottom: 2px solid var(--black-color);
 }
 
-.nav_container{
-  /* border: 2px solid var(--black-color); */
-}
 /* Navigation for mobile devices */
 
 
@@ -249,7 +246,59 @@ nav{
 
 
 /*=============== HOME ===============*/
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-size: var(--h2-font-size);
+  padding: 0 2rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center; /* Added to center align text */
+}
 
+.home__name {
+  font-size: var(--biggest-font-size);
+  color: var(--black-color);
+  font-weight: bolder;
+  margin-bottom: 2rem; /* Increased margin-bottom for better spacing */
+}
+
+.home__social-link {
+  display: flex;
+  justify-content: center; /* Changed to center align social links */
+  align-items: center;
+  gap: 2rem; /* Increased gap for better spacing */
+  margin-bottom: 2rem; /* Added margin-bottom for better spacing */
+}
+
+.home__description {
+  max-width: 800px; /* Added max-width to limit line length */
+  margin-bottom: 2rem; /* Added margin-bottom for better spacing */
+}
+
+.home__scroll-text {
+  font-size: var(--smaller-font-size); /* Added smaller font size */
+  color: var(--black-color); /* Added black color */
+  animation: scrollDown 2s infinite; /* Added scroll down animation */
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 /* Animate scroll icon */
 
