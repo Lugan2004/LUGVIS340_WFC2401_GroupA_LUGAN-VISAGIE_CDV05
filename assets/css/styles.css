@@ -246,9 +246,11 @@ nav{
 
 
 /*=============== HOME ===============*/
-.home {
-  display: flex;
-  flex-direction: column;
+.home__section {
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -259,33 +261,62 @@ nav{
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  text-align: center; /* Added to center align text */
+  text-align: center;
+}
+article{
+  height: 200px;
 }
 
 .home__name {
+  text-align: left;
   font-size: var(--biggest-font-size);
   color: var(--black-color);
   font-weight: bolder;
-  margin-bottom: 2rem; /* Increased margin-bottom for better spacing */
+  margin-bottom: 0.2rem;
+  grid-column: 1 / -1; /* Span across all columns */
+}
+
+.home__content {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Split into two columns */
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home__text-content {
+  text-align: right;
+}
+.list__line{
+  background-color: var(--black-color);
+  height: 3px;
+  width: 100px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-right: 20px;
+}
+.home__description {
+  color: var(--black-color);
+  text-align: left;
+  max-width: 600px;
+}
+
+.home__img {
+  justify-self: end; /* Align image to the right */
 }
 
 .home__social-link {
   display: flex;
-  justify-content: center; /* Changed to center align social links */
+  justify-content: flex-end;
   align-items: center;
-  gap: 2rem; /* Increased gap for better spacing */
-  margin-bottom: 2rem; /* Added margin-bottom for better spacing */
-}
-
-.home__description {
-  max-width: 800px; /* Added max-width to limit line length */
-  margin-bottom: 2rem; /* Added margin-bottom for better spacing */
+  gap: 2rem;
 }
 
 .home__scroll-text {
-  font-size: var(--smaller-font-size); /* Added smaller font size */
-  color: var(--black-color); /* Added black color */
-  animation: scrollDown 2s infinite; /* Added scroll down animation */
+  font-size: var(--smaller-font-size);
+  color: var(--black-color);
+  animation: scrollDown 2s infinite;
+  grid-column: 1 / -1; /* Span across all columns */
 }
 
 @keyframes scrollDown {
@@ -299,9 +330,6 @@ nav{
     transform: translateY(0);
   }
 }
-
-/* Animate scroll icon */
-
 
 /*=============== BUTTON ===============*/
 

@@ -1,87 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Responsive portfolio website Lugan Visagie</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- Tailwind CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <title>Responsive portfolio website Lugan Visagie</title>
+    </head>
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav_container">
-            <div class="logo__container">
-                <div class="nav__logo-circle">LV</div>
-                <div class="nav__logo-name">Lugan Visagie.</div>
-            </div>
-            <ul class="nav__list">
-                <li class="nav__link">Home</li>
-                <li class="nav__link">About Me</li>
-                <li class="nav__link">Projects</li>
-                <li class="nav__link_Contact">Contact Me</li>
-                <li class="theme__toggle"><i class="ri-sun-line"></i></li>
-            </ul>
-        </nav>
+      <nav class="nav_container relative">
+        <div class="logo__container">
+          <div class="nav__logo-circle">LV</div>
+          <div class="nav__logo-name">Lugan Visagie.</div>
+        </div>
+    
+        <!-- Burger Menu -->
+        <div class="burger-menu hidden md:hidden">
+          <button id="burger-toggle" class="flex items-center px-3 py-2 rounded">
+            <svg class="fill-black h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+    
+        <ul class="nav__list absolute md:relative md:flex md:items-center w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 bg-white md:bg-transparent">
+          <li class="nav__link md:ml-8 text-xl md:my-0 my-7"><a href="#home">Home</a></li>
+          <li class="nav__link md:ml-8 text-xl md:my-0 my-7"><a href="#about">About Me</a></li>
+          <li class="nav__link md:ml-8 text-xl md:my-0 my-7"><a href="#services">My Services</a></li>
+          <li class="nav__link md:ml-8 text-xl md:my-0 my-7"><a href="#projects">Projects</a></li>
+          <li class="nav__link_Contact md:ml-8 text-xl md:my-0 my-7"><a href="#contact">Contact Me</a></li>
+          <li class="theme__toggle md:ml-8 text-xl md:my-0 my-7"><i class="ri-sun-line"></i></li>
+        </ul>
+      </nav>
     </header>
+    
+    <script>
+      const burgerToggle = document.getElementById('burger-toggle');
+      const navList = document.querySelector('.nav__list');
+    
+      burgerToggle.addEventListener('click', () => {
+        navList.classList.toggle('opacity-0');
+        navList.classList.toggle('top-[-400px]');
+      });
+    </script>
 
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-         <div class="home__name">Lugan Visagie</div>
-         <div class="home__social-link">
-             <a href="https://www.instagram.com/" target="_blank">
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                     <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428-.047-1.066-.06-1.405-.06-4.122 0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="grey"></path>
-                 </svg>
-             </a>
-             <a href="https://www.linkedin.com/" target="_blank">
-               <?xml version="1.0" encoding="utf-8"?>
-               <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-               <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="grey"/>
-               </svg>
-             </a>
-             <a href="https://github.com/" target="_blank">
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                     <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.299 24 12c0-6.627-5.373-12-12-12z" fill="grey"></path>
-                 </svg>
-             </a>
-         </div>
-         <div class="home__description"><b>Frontend Developer</b>, with knowledge in web development and design, I offer the best projects resulting in quality work.</div>
-         <img src="assets/img/home-perfil.jpg" alt="" height="100px" width="100px" class="home__img">
-         <div class="home__scroll-text">Scroll Down.</div>
-     </section>
+        <section id="home" class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto mt-12">
+          <div class="flex flex-col space-y-6 md:mr-10 mb-10 md:mb-0 md:max-w-md">
+            <h1 class="text-4xl font-bold text-gray-800">Lugan Visagie</h1>
+            <p class="text-xl text-gray-600">
+              <span id="animated-text" class="font-bold text-red-500" >Frontend Developer</span>, with expertise in web development and design, I deliver top-notch projects that embody excellence. My specialization extends to JavaScript, React, and Tailwind, ensuring high-quality work in every endeavor.
+            </p>
+            <svg class="hidden md:block " width="53" height="81" viewBox="0 0 53 81" xmlns="http://www.w3.org/2000/svg">
+              <path d="M51.0477 1.17087C40.4513 17.1607 29.0523 32.4971 19.0372 48.8629C13.2804 58.2703 -3.92008 86.412 2.91504 77.7563C14.1498 63.5292 23.3468 47.4314 33.901 32.6695C37.9902 26.9499 42.2523 21.395 46.5698 15.8481C48.2313 13.7136 49.8214 12.2153 47.4714 15.8092C36.9829 31.8496 25.4188 47.1543 14.8614 63.1553C13.7348 64.8628 10.6583 70.0727 12.1285 68.6502C17.5175 63.4362 22.0878 57.1433 26.7655 51.3269C32.3983 44.3228 37.6555 36.9359 43.6299 30.2146C45.776 27.8003 48.0708 24.232 50.6916 22.3437C55.3294 19.0022 45.7662 32.6808 42.8159 37.5768C37.9058 45.7249 32.2719 53.4829 27.191 61.523" stroke="black" stroke-width="2" stroke-linecap="round" fill="#ff3333" stroke-linejoin="round"></path>
+            </svg>
+            <div class="scroll-text text-center">
+              <div class="flex items-center space-x-2 animate-bounce">
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                  <svg width="53" height="68" viewBox="0 0 53 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.00001 0.999988C6.91304 1.98551 26.6061 10.9359 27.0417 20.0833C27.223 23.8896 25.316 29.2172 22.1667 31.6666C15.4036 36.9267 4.17815 29.9088 13.5 23.5C18.7279 19.9058 26.1975 22.8211 31.4583 24.9583C38.5 28.5 38.5 28.5 43.3334 35.25C49 44.5 48.6119 57.8059 47.5 57.25" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M49.75 64C48.6261 63.3881 40.1729 58.4261 41.125 59.1666C42.3712 60.136 43.7571 61.0071 44.875 62.125C46.1976 63.4476 47.8331 64.4164 49 65.875C50.0239 67.1549 52 58.7612 52 57.25" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img class="w-full md:w-64 h-auto object-cover rounded-lg shadow-lg" src="./assets/img/home-perfil.jpg" alt="Profile Picture" />
+          </div>
+        </section>
+        
+      <aside class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4">
+          <a href="https://www.instagram.com/" target="_blank" class="hover:opacity-75 transition duration-150 ease-in-out ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-gray-600">
+                  <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428-.047-1.066-.06-1.405-.06-4.122 0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"></path>
+              </svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" class="hover:opacity-75 transition duration-150">
+              <svg width="24" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-current text-gray-600">
+                  <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 19.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z"></path>
+                </svg>
+                </a>
+                <a href="https://github.com/" target="_blank" class="hover:opacity-75 transition duration-150">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="fill-current text-gray-600">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.299 24 12c0-6.627-5.373-12-12-12z"></path>
+                </svg>
+                </a>
+                </aside>
+                <style>
+                  @keyframes bounceAnimation {
+                      0%, 100% {
+                          transform: translateY(0);
+                      }
+                      50% {
+                          transform: translateY(-10px);
+                      }
+                  }
+              
+                  .scroll-text {
+                      animation: bounceAnimation 2s infinite;
+                  }
+              
+                  @keyframes waveAnimation {
+                      0% {
+                          transform: translateX(0);
+                      }
+                      25% {
+                          transform: translateX(-6px);
+                      }
+                      50% {
+                          transform: translateX(4px);
+                      }
+                      75% {
+                          transform: translateX(-6px);
+                      }
+                      100% {
+                          transform: translateX(0);
+                      }
+                  }
+              
+                  #animated-text {
+                      display: inline-block;
+                      animation: waveAnimation 2s infinite;
+                      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                      font-size: 1.2rem;
+                  }
+              </style>
+                ```
         <!--==================== ABOUT ====================-->
         <section class="about section" id="about">
-        </section>
+          <div class="container mx-auto px-4 py-16">
+              <div class="flex flex-col md:flex-row items-center justify-between">
+                  <div class="md:w-1/2 mb-8 md:mb-0">
+                      <img
+                          class="w-full h-auto object-cover rounded-lg shadow-lg"
+                          src="./assets/img/about-perfil.jpg"
+                          alt="About Me Image"
+                      />
+                  </div>
+                  <div class="md:w-1/2 md:pl-8">
+                      <h2 class="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
+                      <p class="text-gray-600 mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel
+                          tincidunt aliquam, nunc nisl aliquam massa, eget aliquam nisl nisl eu nunc.
+                          Donec hendrerit vehicula pharetra. Fusce euismod, nunc vel tincidunt aliquam,
+                          nunc nisl aliquam massa, eget aliquam nisl nisl eu nunc.
+                      </p>
+                      <p class="text-gray-600 mb-4">
+                          Nulla facilisi. Sed at sem vel nisl malesuada feugiat. Proin in mauris
+                          consequat, varius neque vitae, convallis neque. Sed tincidunt scelerisque
+                          mauris, sit amet laoreet lorem volutpat nec.
+                      </p>
+                      <a
+                          href="#"
+                          class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                      >
+                          Download CV
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
 
         <!--==================== SERVICES ====================-->
-        <section class="services section">
-        </section>
+        <section class="services section" id="services">
+          <div class="container mx-auto px-4 py-16">
+              <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">My Services</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div class="bg-white rounded-lg shadow-lg p-6">
+                      <div class="flex items-center justify-center mb-4">
+                          <span class="text-red-500 text-4xl">
+                              <i class="ri-code-line"></i>
+                          </span>
+                      </div>
+                      <h3 class="text-xl font-bold text-gray-800 mb-2">Web Development</h3>
+                      <p class="text-gray-600">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel
+                          tincidunt aliquam, nunc nisl aliquam massa, eget aliquam nisl nisl eu nunc.
+                      </p>
+                  </div>
+                  <div class="bg-white rounded-lg shadow-lg p-6">
+                      <div class="flex items-center justify-center mb-4">
+                          <span class="text-red-500 text-4xl">
+                              <i class="ri-palette-line"></i>
+                          </span>
+                      </div>
+                      <h3 class="text-xl font-bold text-gray-800 mb-2">Web Design</h3>
+                      <p class="text-gray-600">
+                          Nulla facilisi. Sed at sem vel nisl malesuada feugiat. Proin in mauris
+                          consequat, varius neque vitae, convallis neque.
+                      </p>
+                  </div>
+                  <div class="bg-white rounded-lg shadow-lg p-6">
+                      <div class="flex items-center justify-center mb-4">
+                          <span class="text-red-500 text-4xl">
+                              <i class="ri-smartphone-line"></i>
+                          </span>
+                      </div>
+                      <h3 class="text-xl font-bold text-gray-800 mb-2">Responsive Design</h3>
+                      <p class="text-gray-600">
+                          Sed tincidunt scelerisque mauris, sit amet laoreet lorem volutpat nec. Donec
+                          hendrerit vehicula pharetra.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
 
         <!--==================== PROJECTS ====================-->
         <section class="projects section" id="projects">
-        </section>
+          <div class="container mx-auto px-4 py-16">
+              <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">My Projects</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <img
+                          class="w-full h-48 object-cover"
+                          src="https://placehold.co/600x400"
+                          alt="Project 1"
+                      />
+                      <div class="p-6">
+                          <h3 class="text-xl font-bold text-gray-800 mb-2">Project 1</h3>
+                          <p class="text-gray-600 mb-4">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc
+                              vel tincidunt aliquam, nunc nisl aliquam massa.
+                          </p>
+                          <a
+                              href="#"
+                              class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                          >
+                              View Project
+                          </a>
+                      </div>
+                  </div>
+                  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <img
+                          class="w-full h-48 object-cover"
+                          src="https://placehold.co/600x400"
+                          alt="Project 2"
+                      />
+                      <div class="p-6">
+                          <h3 class="text-xl font-bold text-gray-800 mb-2">Project 2</h3>
+                          <p class="text-gray-600 mb-4">
+                              Nulla facilisi. Sed at sem vel nisl malesuada feugiat. Proin in mauris
+                              consequat, varius neque vitae, convallis neque.
+                          </p>
+                          <a
+                              href="#"
+                              class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                          >
+                              View Project
+                          </a>
+                      </div>
+                  </div>
+                  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <img
+                          class="w-full h-48 object-cover"
+                          src="https://placehold.co/600x400"
+                          alt="Project 3"
+                      />
+                      <div class="p-6">
+                          <h3 class="text-xl font-bold text-gray-800 mb-2">Project 3</h3>
+                          <p class="text-gray-600 mb-4">
+                              Sed tincidunt scelerisque mauris, sit amet laoreet lorem volutpat nec.
+                              Donec hendrerit vehicula pharetra.
+                          </p>
+                          <a
+                              href="#"
+                              class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                          >
+                              View Project
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
 
         <!--==================== CONTACT ====================-->
         <section class="contact section" id="contact">
-        </section>
+          <div class="container mx-auto px-4 py-16">
+              <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Contact Me</h2>
+              <div class="max-w-3xl mx-auto">
+                  <form>
+                      <div class="mb-4">
+                          <label class="block text-gray-700 font-bold mb-2" for="name">
+                              Name
+                          </label>
+                          <input
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              id="name"
+                              type="text"
+                              placeholder="Enter your name"
+                          />
+                      </div>
+                      <div class="mb-4">
+                          <label class="block text-gray-700 font-bold mb-2" for="email">
+                              Email
+                          </label>
+                          <input
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              id="email"
+                              type="email"
+                              placeholder="Enter your email"
+                          />
+                      </div>
+                      <div class="mb-4">
+                          <label class="block text-gray-700 font-bold mb-2" for="message">
+                              Message
+                          </label>
+                          <textarea
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              id="message"
+                              rows="5"
+                              placeholder="Enter your message"
+                          ></textarea>
+                      </div>
+                      <div class="flex justify-center">
+                          <button
+                              class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                              type="button"
+                          >
+                              Submit
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
     </main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
+      <div class="max-mx-auto">
+        <div class="md:flex md:justify-between">
+          <div class="md:flex md:mx-auto">
+            <ul>
+              <li>
+                <div class="md:px-4 md:mx-2">
+                  <i class="fa-regular fa-Copyright"></i>
+                  <div class="md:pb-6 md:mx-2 2022 1 3 2023">Lugan Visagie</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="mt-2 mx-2">
+            <div class="md:flex">
+              <div class="md:mx-2 2022 1 3 2023">2022 1 3 2023</div>
+              <div class="cursor-pointer hover:text-gray-200">
+                <i class="bx bx-up-arrow-circle bx-md"></i>
+              </div>
+            </div>
+          </div>
+    
+          <div class="md:flex md:flex-row md:mx-auto">
+            <ul class="md:flex md:flex-1 md:flex-row md:flex-wrap-reverse md:mx-2">
+              <li><a href="#" target="__blank"><i class='bx bx-loader bx-spin bx-md'></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
-
-    <!--========== SCROLL UP ==========-->
-    <!--=============== SCROLLREVEAL ===============-->
-    <script src=""></script>
-    <!--=============== EMAIL JS ===============-->
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
+    
+    <script src="assets/js/scrollreveal.min.js"></script>
+    
+    <script>
+      ScrollReveal({
+        //...
+      });
+    
+      ScrollReveal().reveal(".md:flex", {
+        //...
+      });
+    </script>
+    
+    <script src="assets/js/scrollreveal.min.js"></script>
+    
+    <script>
+      ScrollReveal().reveal(".md:flex", {
+        //...
+      });
+    </script>
+    
+    <script>
+      const moreOptions = ScrollReveal;
+    
+      moreOptions.reveal(".md:flex", {
+        //...
+      });
+    </script>
 </body>
 </html>
