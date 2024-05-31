@@ -102,6 +102,7 @@ body.dark-mode {
 
 .dark-mode .nav__list {
   background-color: #2b2b2b;
+  border-radius: 5px;
 }
 
 .dark-mode .nav__link a,
@@ -116,6 +117,7 @@ body.dark-mode {
 
 .dark-mode section {
   background-color: #2b2b2b;
+  border-radius: 5px;
 }
 
 .dark-mode section h2,
@@ -141,14 +143,21 @@ body.dark-mode {
   color: #f0f0f0;
 }
 
-.dark-mode .ri-sun-line {
-  color: #f0f0f0;
+.light-mode .ri-moon-line {
+  display: none;
 }
 
-.dark-mode .ri-sun-line:before {
-  content: "\f186"; /* Moon icon Unicode */
-  font-family: "Remix Icon";
+.light-mode .ri-sun-line {
+  display: inline-block;
 }
+
+.dark-mode .ri-moon-line {
+  display: inline-block;
+}
+
+
+
+
 
 /*========== Variables Dark theme ==========*/
 
